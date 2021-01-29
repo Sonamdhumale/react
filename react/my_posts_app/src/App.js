@@ -8,7 +8,7 @@ export default  function App() {
   let [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+     fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => response.json())
     .then((data) => {
       setLoader(false);
@@ -22,7 +22,8 @@ export default  function App() {
       {loader ? (
         <img src={Spinner} className="fp-loader" alt="loading" />
       ) : (
-        <FullPageLoader data={data} />
+        <li ><FullPageLoader  data={data} /></li>
+        
       )}
     </div>
   );

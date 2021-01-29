@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.fp-loader{
+  position:absolute;
+  margin-top:200px;
+}
