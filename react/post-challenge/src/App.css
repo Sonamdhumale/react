@@ -37,7 +37,8 @@
   }
 }
 
-.fp-loader{
-  position:absolute;
-  margin-top:200px;
+.fp-loader {
+  position: 50px;
+  margin-top: 200px;
+  align-self: start;
 }
