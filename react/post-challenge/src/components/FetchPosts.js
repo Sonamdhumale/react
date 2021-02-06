@@ -13,9 +13,7 @@ export default class FetchPosts extends Component {
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
-      setTimeout(() => {
-        this.setState({ data: data.splice(0, 10), loading: false });
-      }, 2000);
+      this.setState({ data: data.splice(0, 10), loading: false });
     } catch (err) {
       console.log(err);
     }
@@ -26,9 +24,6 @@ export default class FetchPosts extends Component {
 
     if (this.state.loading) {
       return <img src={Spinner} className="fp-loader" alt="loading" />;
-    }
-    if (!this.state.data) {
-      return <div>didn't get posts</div>;
     }
 
     return (
