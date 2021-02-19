@@ -1,0 +1,133 @@
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome {
+  background-color: grey;
+  margin: 0 auto 0 auto;
+  width: max-content;
+  height: max-content;
+  animation: blink alternate-reverse 2s infinite ease-in-out;
+}
+.introduction {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(133, 144, 150);
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 1vh;
+  grid-template-areas:
+    ". . . . . img img img img ."
+    ". caption caption caption caption img img img img ."
+    ". text text text text img img img img ."
+    ". . . . . img img img img .";
+}
+@keyframes slideBGTextUp {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.background-title {
+  position: absolute;
+  font-size: 250px;
+  font-family: fantasy;
+  color: black;
+  top: 25%;
+  left: 10%;
+  z-index: 0;
+  opacity: 0.2;
+  animation: slideBGTextUp 0.5s ease-out;
+}
+
+@keyframes slideCaptionLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(250);
+  }
+}
+.intro-title {
+  transform: translate(25%, 20%);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 40px;
+  height: max-content;
+  width: max-content;
+  grid-area: caption;
+  justify-self: right;
+  padding: 0 2rem;
+  background-color: #606060;
+  border-radius: 1rem;
+  animation: slideCaptionLeft 1s ease;
+  z-index: 1;
+}
+
+@keyframes slideTextUp {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.intro-text {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.25;
+  grid-area: text;
+  animation: slideTextUp 1s ease-out;
+}
+@keyframes slideImageUp {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.pic2 {
+  grid-area: img;
+  height: 30vw;
+  width: 30vw;
+  z-index: 2;
+  justify-self: start;
+  align-self: center;
+  border-radius: 100rem;
+  box-shadow: -3px 5px 30px #000000;
+  animation: slideImageUp 1s ease-out;
+  z-index: 10;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  overflow: hidden;
+}
+
+.pic2 > img {
+  height: 125%;
+  width: 125%;
+  object-fit: scale-down;
+  /* object-position: 10% 0; */
+  transform: translate(-12.5%, 5%);
+}
+@media screen and (min-width: 601px) {
+  .pic2 {
+    background-image: url("../src/img/pic2.png");
+  }
+}
+@media screen and (max-width: 600px) {
+  .pic2 {
+    background-image: url("../src/img/pic1.jpg");
+  }
+}

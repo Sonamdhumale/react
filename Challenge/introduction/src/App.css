@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.Heading {
+  height: 100vh;
+  width: 100%;
+  background-color: lightpink;
+}
+@keyframes animate {
+  0% {
+    height: 10vh;
+  }
+  50% {
+    zoom: normal;
+  }
+  100% {
+    height: 20vh;
+  }
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "img1 img2"
+    "img3 img5"
+    "img6 img4";
+  row-gap: 1vh;
+  column-gap: 1vw;
+}
+
+#image1 {
+  grid-area: img1;
+  height: 33vh;
+  width: 80%;
+  animation: animate 5s ease;
+  transition: all 1s ease-in-out;
+}
+
+#image2 {
+  grid-area: img2;
+  height: 33vh;
+  width: 80%;
+  animation: animate 5s ease;
+  transition: all 1s ease-in-out;
+}
+
+#image3 {
+  grid-area: img3;
+  height: 33vh;
+  width: 80%;
+  animation: animate 5s ease;
+  transition: all 1s ease-in-out;
+}
+
+#image4 {
+  grid-area: img4;
+  height: 33vh;
+  width: 80%;
+  animation: animate 5s ease;
+  transition: all 1s ease-in-out;
+}
+
+.image5 {
+  grid-area: img5;
+  height: 33vh;
+  width: 80%;
+}
+
+.image6 {
+  grid-area: img6;
+  height: 33vh;
+  width: 80%;
+}
